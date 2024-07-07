@@ -1,23 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import AllTodos from "./components/AllTodos";
+import Header from "./components/Header";
+import InputForm from "./components/InputForm";
+import './index.css'
 
 function App() {
+
+  const [todosList, setTodosList] = useState([])
+
+  const addTodo = (todoreceived) => {
+      if(todoreceived.value !== undefined && todoreceived.value.trim() !== '') {
+        setTodosList([...todosList, todoreceived])
+      }
+  }
+
+  const handleIsCompleted = (indexReceived) => {
+      let updatedList = [...todosList]
+      updatedList[indexReceived].isCompleted = !updatedList[indexReceived].isCompleted
+      setTodosList(updatedList)
+  }
+
+  const handleUpdate = (indexReceived) => {
+      const updatedValue = prompt('enter updated value')
+      if(updatedValue !== null && updatedValue.trim() !== '') {
+        let updatedList = [...todosList]
+        updatedList[indexReceived].value = updatedValue
+        setTodosList(updatedList)
+      }
+  }
+
+  const handleDelete = (idReceived) => {
+    let updatedList = [...todosList]
+    updatedList = updatedList.filter((item)=>item.id !== idReceived)
+    setTodosList(updatedList)
+  }
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Header />
+        <InputForm addTodo ={addTodo}/>
+        <AllTodos todosList={todosList} handleIsCompleted={handleIsCompleted} handleUpdate={handleUpdate} handleDelete={handleDelete}/>
     </div>
   );
 }

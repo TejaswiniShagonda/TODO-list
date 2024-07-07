@@ -1,13 +1,97 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.header-container {
+  background-color: aquamarine;
+  color: blue;
+  text-align: center;
+  padding: 10px 0px;
+}
+
+.header-container h1 {
+  text-transform: uppercase;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.input-container {
+  width: 60%;
+  margin: 0px 20%;
+  padding: 20px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-container input {
+  width: 500px;
+  padding: 10px 20px;
+  font-size: 1.3rem;
+  border: 1px solid green;
+  border-bottom-left-radius: 30px;
+  border-top-left-radius: 30px;
+}
+
+.input-container button {
+  width: 100px;
+  padding: 10px 20px;
+  font-size: 1.3rem;
+  background-color: green;
+  color: aliceblue;
+  border: 1px solid green;
+  border-bottom-right-radius: 30px;
+  border-top-right-radius: 30px;
+  font-weight: 600;
+}
+
+.all-todos-container {
+  width: 80%;
+  margin: 20px 10%;
+  padding: 20px;
+  border: 1px solid green;
+  border-radius: 10px;
+  background-color: rgb(229, 246, 240);
+}
+
+.todo-item-container {
+  margin: 20px 0px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(194, 218, 239);
+  box-shadow: 3px 3px 5px #999;
+  border-radius: 30px;
+}
+
+.todo-item-container button {
+  width: 40px;
+  height: 40px;
+  border-radius: 30px;
+  border: none;
+  font-size: 1.3rem;
+  margin: 0px 5px;
+  cursor: pointer;
+}
+
+.bg-red {
+  background-color: red;
+  color: aliceblue;
+}
+
+.bg-green {
+  background-color: green;
+  color: aliceblue;
+}
+
+.bg-orange {
+  background-color: rgb(171, 115, 10);
+  color: aliceblue;
+}
+
+.txt-md {
+  font-size: 1.3rem;
 }
